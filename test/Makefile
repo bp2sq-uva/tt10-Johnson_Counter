@@ -5,7 +5,40 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = tt_um_spi_serv.v
+PROJECT_SOURCES = \
+  tt_um_spi_serv.v \
+  serv_1.3.0/rtl/serv_aligner.v \
+  serv_1.3.0/rtl/serv_alu.v \
+  serv_1.3.0/rtl/serv_bufreg.v \
+  serv_1.3.0/rtl/serv_bufreg2.v \
+  serv_1.3.0/rtl/serv_compdec.v \
+  serv_1.3.0/rtl/serv_csr.v \
+  serv_1.3.0/rtl/serv_ctrl.v \
+  serv_1.3.0/rtl/serv_debug.v \
+  serv_1.3.0/rtl/serv_decode.v \
+  serv_1.3.0/rtl/serv_immdec.v \
+  serv_1.3.0/rtl/serv_mem_if.v \
+  serv_1.3.0/rtl/serv_rf_if.v \
+  serv_1.3.0/rtl/serv_rf_ram_if.v \
+  serv_1.3.0/rtl/serv_rf_ram.v \
+  serv_1.3.0/rtl/serv_rf_top.v \
+  serv_1.3.0/rtl/serv_state.v \
+  serv_1.3.0/rtl/serv_top.v \
+  servant_1.3.0/servant/servant_gpio.v \
+  servant_1.3.0/servant/servant_mux.v \
+  servant_1.3.0/servant/servant_ram_quartus.sv \
+  servant_1.3.0/servant/servant_timer.v \
+  servant_1.3.0/servant/servant.v \
+  servant_1.3.0/servant/servive.v \
+  servant_1.3.0/servant/servive_clock_gen.v \
+  servant_1.3.0/servant_spi/servant_spi_master_if.v \
+  servant_1.3.0/servant_spi/servant_spi_ram.v \
+  servant_1.3.0/servant_spi/servant_spi_slave_if.v \
+  servant_1.3.0/servant_spi/servant_spi_top.v \
+  servile_1.3.0/servile/servile_arbiter.v \
+  servile_1.3.0/servile/servile_mux.v \
+  servile_1.3.0/servile/servile_rf_mem_if.v \
+  servile_1.3.0/servile/servile.v
 
 ifneq ($(GATES),yes)
 
