@@ -20,11 +20,9 @@ module tt_um_spi_serv (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  reg rst_n_i;
-  reg [7:0] cnt;
+  // reg rst_n_i;
+  // reg [7:0] cnt;
 
-  wire 	   i_clk;
-  wire 	   i_rst_n;
   wire     spi_miso;
   wire     spi_sck;
   wire     spi_ss;
@@ -32,8 +30,7 @@ module tt_um_spi_serv (
   wire 	   q;
   wire 	   uart_txd;
 
-  assign i_clk = clk;
-  assign i_rst_n = rst_n;
+  assign i_rst = ~rst_n;
   assign uo_out[0] = spi_sck;
   assign uo_out[1] = spi_ss;
   assign uo_out[2] = spi_mosi;
@@ -44,24 +41,14 @@ module tt_um_spi_serv (
    parameter memfile = "zephyr_hello.hex";
    parameter memsize = 8192;
 
-   wire      wb_clk;
-   wire      wb_rst;
-
    assign uart_txd = q;
-
-
-   servive_clock_gen clock_gen
-     (.i_clk (i_clk),
-      .i_rst (!i_rst_n),
-      .o_clk (wb_clk),
-      .o_rst (wb_rst));
 
    servant_spi_top
      #(.memfile (memfile),
        .memsize (memsize))
    servant
-     (.wb_clk (wb_clk),
-      .wb_rst (wb_rst),
+     (.wb_clk (clk),
+      .wb_rst (!rst),
       .spi_miso(spi_miso),
       .spi_sck(spi_sck),
       .spi_ss(spi_ss),
@@ -85,6 +72,3 @@ module tt_um_spi_serv (
   wire _unused_pins = ena;
 
 endmodule  // tt_um_factory_test
-
-
-

@@ -30,7 +30,6 @@ PROJECT_SOURCES = \
   servant_1.3.0/servant/servant_timer.v \
   servant_1.3.0/servant/servant.v \
   servant_1.3.0/servant/servive.v \
-  servant_1.3.0/servant/servive_clock_gen.v \
   servant_1.3.0/servant_spi/servant_spi_master_if.v \
   servant_1.3.0/servant_spi/servant_spi_ram.v \
   servant_1.3.0/servant_spi/servant_spi_slave_if.v \
