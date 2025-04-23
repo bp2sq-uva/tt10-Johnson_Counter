@@ -30,7 +30,6 @@ module tt_um_spi_serv (
   wire 	   q;
   wire 	   uart_txd;
 
-  assign i_rst = ~rst_n;
   assign uo_out[0] = spi_sck;
   assign uo_out[1] = spi_ss;
   assign uo_out[2] = spi_mosi;
