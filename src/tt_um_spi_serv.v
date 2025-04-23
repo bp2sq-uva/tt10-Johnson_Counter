@@ -47,7 +47,7 @@ module tt_um_spi_serv (
        .memsize (memsize))
    servant
      (.wb_clk (clk),
-      .wb_rst (!rst),
+      .wb_rst (!rst_n),
       .spi_miso(spi_miso),
       .spi_sck(spi_sck),
       .spi_ss(spi_ss),
