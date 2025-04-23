@@ -51,7 +51,7 @@ reg         [31:0]                              rd_data_reg;
 reg         [1:0]                               byte_offset;
 reg         [1:0]                               last_byte;
 reg         [7:0]                               spi_out_reg;
-reg         [7:0]                               spi_in_reg;
+reg         [7:0]                               spi_in_reg; // TODO: 0th bit can be directly used from miso
 
 wire       serial_clk_posedge;
 wire       serial_clk_negedge;

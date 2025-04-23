@@ -21,7 +21,6 @@ module tt_um_spi_serv (
 );
 
   // reg rst_n_i;
-  // reg [7:0] cnt;
 
   wire     spi_miso;
   wire     spi_sck;
@@ -37,15 +36,10 @@ module tt_um_spi_serv (
   assign uo_out[4] = uart_txd;
   assign spi_miso = ui_in[0];
 
-   parameter memfile = "zephyr_hello.hex";
-   parameter memsize = 8192;
 
    assign uart_txd = q;
 
-   servant_spi_top
-     #(.memfile (memfile),
-       .memsize (memsize))
-   servant
+   servant_spi_top servant
      (.wb_clk (clk),
       .wb_rst (!rst_n),
       .spi_miso(spi_miso),
@@ -58,14 +52,6 @@ module tt_um_spi_serv (
   // always @(posedge clk or negedge rst_n)
   //   if (~rst_n) rst_n_i <= 1'b0;
   //   else rst_n_i <= 1'b1;
-
-  // always @(posedge clk or negedge rst_n_i)
-  //   if (~rst_n_i) cnt <= 0;
-  //   else cnt <= cnt + 1;
-
-  // assign uo_out  = ~rst_n ? ui_in : ui_in[0] ? cnt : uio_in;
-  // assign uio_out = ui_in[0] ? cnt : 8'h00;
-  // assign uio_oe  = rst_n && ui_in[0] ? 8'hff : 8'h00;
 
   // avoid linter warning about unused pins:
   wire _unused_pins = ena;

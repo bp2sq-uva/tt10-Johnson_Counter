@@ -9,8 +9,6 @@ module servant_spi_top
  output wire spi_mosi,
  output wire q);
 
-   parameter memfile = "zephyr_hello.hex";
-   parameter memsize = 8192;
    parameter reset_strategy = "MINI";
    parameter width = 1;
    parameter sim = 0;
@@ -26,7 +24,6 @@ module servant_spi_top
    localparam [0:0] with_mdu = 1'b0;
 `endif
 
-   localparam	   aw = $clog2(memsize);
    localparam	   csr_regs = with_csr*4;
 
    localparam	   rf_width = width * 2;
@@ -67,17 +64,6 @@ module servant_spi_top
    wire [rf_l2d-1:0]   rf_raddr;
    wire		       rf_ren;
    wire [rf_width-1:0] rf_rdata;
-
-//   wire spi_miso;
-//   wire spi_sck;
-//   wire spi_ss;
-//   wire spi_mosi;
-
-   wire [17:0] ram_addr;
-   wire [7:0] ram_wdata;
-   wire ram_we;
-   wire ram_re;
-   wire [7:0] ram_rdata;
 
    servant_mux servant_mux
      (
@@ -120,37 +106,6 @@ module servant_spi_top
       .spi_sck(spi_sck),
       .spi_ss(spi_ss),
       .spi_mosi(spi_mosi));
-
-//  servant_spi_slave_if
-//   #(.ADDRESS_WIDTH(18))
-//  spi_slave_if
-//    (//spi interface
-//      .spi_sck(spi_sck),
-//      .spi_cs(spi_ss),
-//      .spi_mosi(spi_mosi),
-//      .spi_miso(spi_miso), 
-//    //ram interface  
-//      .sAddress(ram_addr),
-//      .sCSn(),
-//      .sOEn(ram_re),
-//      .sWRn(ram_we),
-//      .sDqDir(),
-//      .sDqOut(ram_wdata),
-//      .sDqIn(ram_rdata));
-//
-//   
-//   servant_spi_ram
-//     #(.memfile (memfile),
-//       .depth (memsize),
-//       .RESET_STRATEGY (reset_strategy))
-//   ram
-//     (// Wishbone interface
-//      .i_clk (wb_clk),
-//      .i_addr (ram_addr[$clog2(memsize)-1:0]),
-//      .i_wdata (ram_wdata),
-//      .i_we  (ram_we) ,
-//      .i_re (ram_re),
-//      .o_rdata (ram_rdata));
 
    servant_timer
      #(.RESET_STRATEGY (reset_strategy),
