@@ -3,7 +3,7 @@
  *
  * Test user module
  *
- * Author: Kavish Ranwella <>
+ * Author: Kavish Ranwella <bue6zr@virginia.edu>
  * Author: Bhasitha Dharmasena <bp2sq@virginia.edu>
  */
 

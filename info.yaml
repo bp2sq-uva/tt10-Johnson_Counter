@@ -16,8 +16,47 @@ project:
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+
   source_files:
     - "tt_um_spi_serv.v"
+    - "serv_1.3.0/rtl/serv_aligner.v"
+    - "serv_1.3.0/rtl/serv_alu.v"
+    - "serv_1.3.0/rtl/serv_bufreg.v"
+    - "serv_1.3.0/rtl/serv_bufreg2.v"
+    - "serv_1.3.0/rtl/serv_compdec.v"
+    - "serv_1.3.0/rtl/serv_csr.v"
+    - "serv_1.3.0/rtl/serv_ctrl.v"
+    - "serv_1.3.0/rtl/serv_debug.v"
+    - "serv_1.3.0/rtl/serv_decode.v"
+    - "serv_1.3.0/rtl/serv_immdec.v"
+    - "serv_1.3.0/rtl/serv_mem_if.v"
+    - "serv_1.3.0/rtl/serv_rf_if.v"
+    - "serv_1.3.0/rtl/serv_rf_ram_if.v"
+    - "serv_1.3.0/rtl/serv_rf_ram.v"
+    - "serv_1.3.0/rtl/serv_rf_top.v"
+    - "serv_1.3.0/rtl/serv_state.v"
+    - "serv_1.3.0/rtl/serv_top.v"
+    - "servant_1.3.0/servant/servant_gpio.v"
+    - "servant_1.3.0/servant/servant_mux.v"
+    - "servant_1.3.0/servant/servant_ram_quartus.sv"
+    - "servant_1.3.0/servant/servant_timer.v"
+    - "servant_1.3.0/servant/servant.v"
+    - "servant_1.3.0/servant/servive_clock_gen.v"
+    - "servant_1.3.0/servant/servive.v"
+    - "servant_1.3.0/servant_spi/servant_spi_master_if.v"
+    - "servant_1.3.0/servant_spi/servant_spi_ram.v"
+    - "servant_1.3.0/servant_spi/servant_spi_slave_if.v"
+    - "servant_1.3.0/servant_spi/servant_spi_top.v"
+    - "servile_1.3.0/servile/servile_arbiter.v"
+    - "servile_1.3.0/servile/servile_mux.v"
+    - "servile_1.3.0/servile/servile_rf_mem_if.v"
+    - "servile_1.3.0/servile/servile.v"
+    - "servant_1.3.0/sw/blinky.hex"
+    - "servant_1.3.0/sw/hello_uart.hex"
+    - "servant_1.3.0/sw/zephyr_hello_mt.hex"
+    - "servant_1.3.0/sw/zephyr_hello.hex"
+    - "servant_1.3.0/sw/zephyr_phil.hex"
+    - "servant_1.3.0/sw/zephyr_sync.hex"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
