@@ -30,10 +30,10 @@ async def test_loopback(dut):
     dut._log.info("Waiting for message.....")
 
     for i in range(17):
-        await RisingEdge(dut.rx_valid.value)
+        await RisingEdge(dut.rx_valid)
         str_val = str_val+str(dut.rx_data.value)
         dut._log.info(f"Value so far: {str_val}")
-        await FallingEdge(dut.rx_valid.value)
+        await FallingEdge(dut.rx_valid)
     assert (str_val == "Hi, I'm Servant!/n"), (
         f"String mismatch: "
         f"Expected 'Hi, I'm Servant!/n', but got {str_val}. "
