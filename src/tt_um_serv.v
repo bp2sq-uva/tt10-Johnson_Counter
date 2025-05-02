@@ -35,8 +35,7 @@ module tt_um_serv (
    assign uart_txd = q;
 
    servant
-     #(.memfile (memfile),
-       .memsize (memsize))
+     #(.memsize (32768))
    servant
      (.wb_clk (clk),
       .wb_rst (!rst_n),
