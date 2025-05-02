@@ -27,7 +27,8 @@ PROJECT_SOURCES = \
   servant_1.3.0/servant/servant_gpio.v \
   servant_1.3.0/servant/servant_mux.v \
   servant_1.3.0/servant/servant_timer.v \
-  servant_1.3.0/servant/servive.v \
+  servant_1.3.0/servant/servant.v \
+  servant_1.3.0/servant/servant_ram.v \
   servant_1.3.0/servant_spi/servant_spi_master_if.v \
   servant_1.3.0/servant_spi/servant_spi_top.v \
   servile_1.3.0/servile/servile_arbiter.v \
