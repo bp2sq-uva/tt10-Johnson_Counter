@@ -6,6 +6,7 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = \
+  tt_um_serv.v \
   tt_um_spi_serv.v \
   serv_1.3.0/rtl/serv_aligner.v \
   serv_1.3.0/rtl/serv_alu.v \
