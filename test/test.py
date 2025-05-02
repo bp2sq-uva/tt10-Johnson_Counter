@@ -27,14 +27,14 @@ async def test_loopback(dut):
 
     dut._log.info("Waiting for message.....")
     
-    for i in range(17):
+    for i in range(20):
         await RisingEdge(dut.rx_valid)
         str_val = str_val+chr(int(dut.rx_data.value))
         dut._log.info(f"Value so far: {str_val}")
         await ClockCycles(dut.clk, 2)
-    assert (str_val == "Hi, I'm Servant!\n"), (
+    assert (str_val == "Hi, I'm Servant!\nYes"), (
         f"String mismatch: "
-        f"Expected 'Hi, I'm Servant!\\n', but got {str_val}. "
+        f"Expected 'Hi, I'm Servant!\\nYes', but got {str_val}. "
     )
 
 @cocotb.test()
