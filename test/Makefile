@@ -63,6 +63,9 @@ endif
 
 # Include the testbench sources:
 VERILOG_SOURCES += $(PWD)/tb.v
+VERILOG_SOURCES += $(PWD)/spi_ram.v
+VERILOG_SOURCES += $(PWD)/spi_slave_if.v
+VERILOG_SOURCES += $(PWD)/uart_rx.v
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file

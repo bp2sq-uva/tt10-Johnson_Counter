@@ -25,19 +25,19 @@ async def test_loopback(dut):
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
-    for i in range(256):
-        dut.uio_in.value = i
-        await ClockCycles(dut.clk, 1)
-        # assert dut.uo_out.value == i
+    str_val = ""
 
-    # When under reset: Output is uio_in, uio is in input mode
-    dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 1)
-    # assert dut.uio_oe.value == 0
-    for i in range(256):
-        dut.ui_in.value = i
-        await ClockCycles(dut.clk, 1)
-        # assert dut.uo_out.value == i
+    dut._log.info("Waiting for message.....")
+
+    for i in range(17):
+        await RisingEdge(rx_valid)
+        str_val = str_val+str(rx_data)
+        dut._log.info(f"Value so far: {str_val}")
+        await FallingEdge(rx_valid)
+    assert (str_val == "Hi, I'm Servant!/n"), (
+        f"String mismatch: "
+        f"Expected 'Hi, I'm Servant!/n', but got {str_val}. "
+    )
 
 @cocotb.test()
 async def test_counter(dut):

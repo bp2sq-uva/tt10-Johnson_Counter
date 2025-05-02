@@ -3,7 +3,6 @@ module spi_ram
   #(//Memory parameters
     parameter depth = 65536,
     parameter aw    = $clog2(depth),
-    parameter RESET_STRATEGY = "",
     parameter memfile = "")
    (input wire 		i_clk,
     input wire [aw-1:0] i_addr,
