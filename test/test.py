@@ -26,23 +26,6 @@ async def test_loopback(dut):
     str_val = ""
 
     dut._log.info("Waiting for message.....")
-
-    await FallingEdge(dut.temp_wire)
-    dut._log.info(f"First fall")
-    await RisingEdge(dut.temp_wire)
-    dut._log.info(f"First rise")
-    await FallingEdge(dut.temp_wire)
-    dut._log.info(f"Second fall")
-    await RisingEdge(dut.temp_wire)
-    dut._log.info(f"Second rise")
-    await FallingEdge(dut.temp_wire)
-    dut._log.info(f"Third fall")
-    await RisingEdge(dut.temp_wire)
-    dut._log.info(f"Third rise")
-    await FallingEdge(dut.temp_wire)
-    dut._log.info(f"Fourth fall")
-    await RisingEdge(dut.temp_wire)
-    dut._log.info(f"Fourth rise")
     
     for i in range(17):
         await RisingEdge(dut.rx_valid)

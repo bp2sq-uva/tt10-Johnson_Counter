@@ -5,7 +5,7 @@ module uart_rx (
     output reg [7:0] data,   // Captured data byte
     output reg valid         // Data valid flag
 );
-    parameter BAUD_TICKS = 28781; // Adjust for your baud rate (e.g., 115200 baud @ 50 MHz)
+    parameter BAUD_TICKS = 921; // Adjust for your baud rate (e.g., 115200 baud @ 50 MHz)
 
     //with_spi: 2:28781/29324, 16:168781 without_spi: 878
     
