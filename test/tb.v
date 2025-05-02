@@ -38,6 +38,10 @@ module tb ();
   wire [7:0] rx_data;
   wire rx_valid;
 
+  wire temp_wire;
+
+  assign temp_wire = uo_out[3];
+
   // Replace tt_um_factory_test with your module name:
   tt_um_spi_serv user_project (
 
