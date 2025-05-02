@@ -35,7 +35,7 @@ module tb ();
   wire ram_we;
   wire ram_re;
   wire [7:0] ram_rdata;
-  wire rx_data;
+  wire [7:0] rx_data;
   wire rx_valid;
 
   // Replace tt_um_factory_test with your module name:
