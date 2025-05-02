@@ -38,7 +38,7 @@ module spi_slave_if
     
     reg rWriteFlag1;
     wire sRamWR; 
-    assign sRamWR = sCnt8 & spi_sck & rWriteFlag1 & rState[1];
+    assign sRamWR = sCnt8 & spi_sck & rWriteFlag1;
      
   
     //reg [7:0] rRamWrBuf; 
