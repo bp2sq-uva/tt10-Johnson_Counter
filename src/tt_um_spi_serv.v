@@ -42,7 +42,9 @@ module tt_um_spi_serv (
 
    assign uart_txd = q;
 
-   servant_spi_top servant
+   servant
+      #(.memsize (32768))
+   servant
      (.wb_clk (clk),
       .wb_rst (!rst_n),
       .spi_miso(spi_miso),
