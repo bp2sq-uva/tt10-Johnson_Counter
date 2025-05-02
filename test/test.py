@@ -10,16 +10,14 @@ from cocotb.triggers import ClockCycles, RisingEdge, FallingEdge
 async def test_loopback(dut):
     dut._log.info("Start")
 
-    # Set the clock period to 10 us (100 KHz)
-    clock = Clock(dut.clk, 10, units="us")
+    # Set the clock period to 20 us (50 MHz)
+    clock = Clock(dut.clk, 20, units="ns")
     cocotb.start_soon(clock.start())
 
     # Reset
     dut._log.info("Reset")
     dut.ena.value = 1
 
-    # ui_in[0] == 0: Output is uio_in
-    dut.ui_in.value = 0
     dut.uio_in.value = 0
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 10)
@@ -48,7 +46,6 @@ async def test_counter(dut):
     cocotb.start_soon(clock.start())
 
     # ui_in[0] == 1: bidirectional outputs enabled, put a counter on both output and bidirectional pins
-    dut.ui_in.value = 1
     dut.uio_in.value = 0
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 10)
