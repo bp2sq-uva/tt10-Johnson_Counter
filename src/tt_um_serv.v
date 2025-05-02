@@ -27,7 +27,6 @@ module tt_um_serv (
 
   assign uo_out[0] = q;
   assign uo_out[1] = uart_txd;
-  assign spi_miso = ui_in[0];
 
   assign uo_out[7:2] = 6'h0;
   assign uio_out = 8'h0;
